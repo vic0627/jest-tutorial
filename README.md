@@ -13,13 +13,15 @@ $ npm i -D jest           # 手動安裝
 $ npm i -D @types/jest
 ```
 
-若要讓 jest 支援 ESM，更新 `scripts`：
+若要讓 jest 支援 ESM，更新 `scripts` 與 `jest` 的設定：
 
 ```json
 {
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "jest": {
+    "transform": {}
   }
 }
 ```
-"# jest-tutorial" 
