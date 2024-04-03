@@ -67,11 +67,3 @@ test('the data is peanut butter', (done) => {
 
   fetchData(callback)
 })
-
-/**
- * .resolves / .rejects
- */
-
-test('the data is peanut butter', () => {
-  return expect(fetchData)
-})
