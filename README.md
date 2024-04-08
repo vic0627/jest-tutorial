@@ -25,3 +25,7 @@ $ npm i -D @types/jest
   }
 }
 ```
+
+## Issues
+
+1. 無法以 ESModule 使用 `jest.mock` 對模組進行快速 mocking。

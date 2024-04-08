@@ -67,3 +67,21 @@ filterTestFn.mockReturnValueOnce(true).mockReturnValueOnce(false)
 const result = [11, 12].filter((num) => filterTestFn(num))
 
 console.log(result) // => [11]
+
+/**
+ * Custom Matchers
+ *
+ * - `expect(mockFn).toHaveBeenCalled()`: The mock function was called at least once.
+ * - `expect(mockFn).toHaveBeenCalledWith(arg1, arg2)`: The mock function was called at least once with specificed args.
+ * - `expect(mockFn).toHaveBeenLastCalledWith(arg1, arg2)`: The last call to the mock function was called with the specificed args.
+ * - `expect(mockFn).toMatchSnapshot*()`: All calls and the name of the mock is written as a snapshot.
+ *
+ * These matchers are sugar for common forms of inspecting the `.mock` property.
+ * You can always do this manually yourself if that's more to your taste or if you need to do something more specific.
+ *
+ * - `expect(mockFn.mock.calls.length).toBeGreaterThan(0)`: The mock function was called at least once.
+ * - `expect(mockFn.mock.calls).toContainEqual([arg1, arg2])`: The mock function was called at least once with specificed args.
+ * - `expect(mockFn.mock.calls[mockFn.mock.calls.length - 1]).toEqual([arg1, arg2])`: The last call to the mock function was called with the specified args.
+ * - `expect(mockFn.mock.calls[mockFn.mock.calls.length - 1][0]).toBe(42)`: The first arg of the last call to the mock function was `42`(note that there is no sugar helper for this specific of an assertion)
+ * - `expect(mockFn.mock.calls).toEqual([arg1, arg2]); expect(mockFn.getMockName()).toBe('a mock name');`:  A snapshot will check that a mock was invoked the same number of times, in the same order, with the same arguments. It will also assert on the name.
+ */

@@ -1,10 +1,9 @@
-import { jest } from '@jest/globals'
-import axios from 'axios'
-import Users from '@/users'
+// import { jest } from '@jest/globals'
+// import axios from 'axios'
+// import Users from '@/users'
+const axios = require('axios')
+const Users = require('@/users')
 
-/**
- * @todo failed to mock external module
- */
 jest.mock('axios')
 // axios.get = jest.fn()
 
